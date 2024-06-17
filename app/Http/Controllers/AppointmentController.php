@@ -13,7 +13,7 @@ class AppointmentController extends Controller
 {
     public function index(){
         $appointments = DB::table('appointments')
-        ->select('pacients.first_name','pacients.last_name','pacients.phone','title','start_time','date_start','price')
+        ->select('pacients.first_name','pacients.last_name','pacients.phone','appointments.id','title','start_time','date_start','price')
         ->join('pacients', 'pacients.id', '=', 'appointments.pacient_id')
         ->get();
         $pacients = Pacient::select('id','first_name','last_name')->get();

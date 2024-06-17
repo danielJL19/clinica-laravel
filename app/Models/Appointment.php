@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Appointment extends Model
 {
-    protected $fillable = ['title', 'start_time','description','pacient_id','date_start','price'];
+    protected $fillable = ['id','title', 'start_time','description','pacient_id','date_start','price'];
     use HasFactory;
 
     public function pacient(): BelongsTo
